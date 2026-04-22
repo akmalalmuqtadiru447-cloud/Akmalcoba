@@ -1,0 +1,60 @@
+aplikasi-perkebunan/
+│── main.py
+│── tanaman.py
+│── panen.py
+│── README.mdclass Tanaman:
+    def __init__(self, nama, jenis, umur):
+        self.nama = nama
+        self.jenis = jenis
+        self.umur = umur  # dalam hari
+
+    def info(self):
+        return f"Tanaman: {self.nama}, Jenis: {self.jenis}, Umur: {self.umur} hari"class Panen:
+    def __init__(self, nama_tanaman, jumlah, harga_per_kg):
+        self.nama_tanaman = nama_tanaman
+        self.jumlah = jumlah  # kg
+        self.harga_per_kg = harga_per_kg
+
+    def total_hasil(self):
+        return self.jumlah * self.harga_per_kg
+
+    def info(self):
+        return f"{self.nama_tanaman} - {self.jumlah} kg, Total: Rp{self.total_hasil()}"from tanaman import Tanaman
+from panen import Panen
+
+def menu():
+    print("\n=== APLIKASI PERKEBUNAN ===")
+    print("1. Tambah Data Tanaman")
+    print("2. Catat Hasil Panen")
+    print("3. Keluar")
+
+tanaman_list = []
+panen_list = []
+
+while True:
+    menu()
+    pilihan = input("Pilih menu: ")
+
+    if pilihan == "1":
+        nama = input("Nama tanaman: ")
+        jenis = input("Jenis tanaman: ")
+        umur = int(input("Umur (hari): "))
+        t = Tanaman(nama, jenis, umur)
+        tanaman_list.append(t)
+        print("Data tanaman ditambahkan!")
+
+    elif pilihan == "2":
+        nama = input("Nama tanaman: ")
+        jumlah = float(input("Jumlah panen (kg): "))
+        harga = float(input("Harga per kg: "))
+        p = Panen(nama, jumlah, harga)
+        panen_list.append(p)
+        print("Data panen ditambahkan!")
+        print(p.info())
+
+    elif pilihan == "3":
+        print("Terima kasih!")
+        break
+
+    else:
+        print("Pilihan tidak valid!")
