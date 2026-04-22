@@ -57,4 +57,15 @@ while True:
         break
 
     else:
-        print("Pilihan tidak valid!")
+        print("Pilihan tidak valid!")# 🌱 Aplikasi Perkebunan Sederhana
+
+Aplikasi ini dibuat menggunakan Python untuk membantu petani atau pengguna mencatat:
+- Data tanaman
+- Hasil panen
+- Perhitungan keuntungan sederhana
+
+## Cara Menjalankan
+1. Pastikan Python sudah terinstall
+2. Jalankan:
+   ```bash
+   python main.py
